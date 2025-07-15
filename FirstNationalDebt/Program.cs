@@ -1,5 +1,4 @@
-﻿using System;
-using Telegram.Bot;
+﻿using Telegram.Bot;
 using Telegram.Bot.Polling;
 using Telegram.Bot.Types;
 using Telegram.Bot.Types.Enums;
@@ -92,9 +91,17 @@ async Task ResultQuery(long chatId, string query)
                     {
                         await bot.SendMessage(
                             chatId: chatId,
-                            text: "К сожалению, решений по данному клиенту не найдено",
+                            text: "Error 500, try again.",
                             cancellationToken: cts.Token);
                     }
+                }
+                else if (query[0] == '@')
+                {
+                    await bot.SendMessage(
+                        chatId: chatId,
+                        text: "К сожалению, решений по данному клиенту не найдено",
+                       cancellationToken: cts.Token);
+
                 }
                 else
                 {
