@@ -74,6 +74,8 @@ async Task ResultQuery(long chatId, string query)
                                 text: "> Запрос выполнен.  \r\n> 76,851,452,892 строк затронуто.  \r\n> Код операции: 7T6J44A.",
                                 cancellationToken: cts.Token);
 
+                            await Task.Delay(5000);
+
                             await bot.SendMessage(
                                 chatId: chatId,
                                 text: "\r\n> [!] ВНИМАНИЕ: активирован специальный протокол First National Debt \"Cerberus\".\r\n> **\"Все агенты → converge on 55.XXXXX, ...Z9bPxw... (signal lost)\" * *",
